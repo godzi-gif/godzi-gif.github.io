@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     background-color: #ff8800a8;
     font-family: 'Arial', sans-serif;
@@ -5,11 +6,11 @@ body {
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column; /* Asegura que los contenedores se alineen verticalmente */
-    align-items: center; /* Centra los contenedores horizontalmente */
-    min-height: 100vh; /* Altura mínima para cubrir la pantalla */
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Contenedor del video */
 #video-container {
     width: 600px;
     height: 400px;
@@ -22,69 +23,45 @@ body {
     background-color: #000;
 }
 
+/* Video styling */
 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Media query para pantallas móviles */
-@media (max-width: 768px) {
-    #video-container {
-        width: 90%; /* El contenedor ocupará el 90% del ancho de la pantalla para darle más espacio */
-        height: 70vh; /* Ajusta la altura al 70% de la altura de la ventana */
-        margin: 20px auto;
-    }
-
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* El video sigue cubriendo el contenedor */
-    }
-    
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Asegura que todo esté centrado verticalmente */
-    }
-}
-
-
-
+/* Estilos para los contenedores generales */
 .container {
-    background-image: url('1.jpg'); /* Cambia esta ruta a tu imagen de fondo */
-    background-size: cover; /* Cubre todo el contenedor */
-    background-repeat: no-repeat; /* No repetir la imagen */
-    background-position: center; /* Centra la imagen en el contenedor */
+    background-image: url('1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 600px;
-    width: 90%; /* Para que se ajuste bien en pantallas pequeñas */
-    margin: 20px 0; /* Espacio superior e inferior entre contenedores */
-    color: #333; /* Asegúrate de que el texto sea legible */
+    width: 90%;
+    margin: 20px 0;
+    color: #333;
+    overflow: auto; /* Asegura que el contenido desborde con scroll si es necesario */
 }
 
+/* Títulos */
 h1, h2 {
     color: #010101;
-    font-weight: bold; /* Negrita para los títulos */
+    font-weight: bold;
 }
 
+/* Texto */
 p {
     font-size: 1.2em;
-    color: #333; /* Color del texto en el contenedor */
-    text-align: center; /* Centrar texto en los párrafos */
-    font-weight: bold; /* Negrita para el texto */
+    color: #333;
+    text-align: center;
+    font-weight: bold;
 }
 
-.image-container {
-    max-width: 100%; /* Ajustar el tamaño de la imagen al contenedor */
-    height: auto; /* Mantener la relación de aspecto */
-    margin-top: 10px; /* Espacio entre el texto y la imagen */
-}
-
+/* Botones */
 button {
     background-color: #e63946;
     color: white;
@@ -98,44 +75,88 @@ button:hover {
     background-color: #ff4b5c;
 }
 
-/* Responsividad para pantallas pequeñas */
+/* Contenedor de la frase */
+#phrase-container {
+    text-align: left;
+    margin: 20px auto;
+    background-color: white;
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+    background-image: none;
+    position: relative;
+}
+
+/* Frase personalizada */
+#custom-phrase {
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Imagen en la esquina del contenedor */
+#right-image {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+
+/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
-    h1, h2 {
-        font-size: 1.5em;
+    /* Ajustes en el video */
+    #video-container {
+        width: 90%;
+        height: 70vh;
+        margin: 20px auto;
     }
 
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Ajustes en el body */
+    body {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    /* Ajustes en los contenedores */
+    .container {
+        padding: 20px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    /* Títulos más pequeños */
+    h1, h2 {
+        font-size: 1.3em;
+    }
+
+    /* Reducir tamaño de fuente en párrafos */
     p {
         font-size: 1em;
+        line-height: 1.4em; /* Mejorar legibilidad */
     }
 
+    /* Ajustes en los botones */
     button {
         padding: 8px 16px;
         font-size: 1em;
     }
-}
-#phrase-container {
-    text-align: left; /* Alinea el texto a la izquierda */
-    margin: 20px auto; /* Espacio vertical y centra horizontalmente */
-    background-color: white; /* Fondo blanco para la frase */
-    padding: 10px;
-    width: 90%; /* Ajusta el ancho del contenedor */
-    max-width: 600px; /* Establece un ancho máximo */
-    background-image: none; /* Quita cualquier imagen de fondo solo en este contenedor */
-    position: relative; /* Necesario para el posicionamiento de la imagen */
-}
 
-#custom-phrase {
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    color: #333; /* Color de texto */
-    font-style: italic; /* Estilo de fuente en cursiva */
-    padding: 5px;
-    border-radius: 5px; /* Bordes ligeramente redondeados */
-}
+    /* Ajustes en la frase personalizada */
+    #custom-phrase {
+        font-size: 12px;
+    }
 
-#right-image {
-    width: 120px; /* Aumenta el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    position: absolute; /* Posiciona la imagen respecto al contenedor */
-    bottom: 0px; /* Aumenta el espacio desde la parte inferior del contenedor */
-    right: 10px; /* Espacio desde el lado derecho del contenedor */
+    /* Asegurar que las imágenes no ocupen demasiado espacio */
+    #right-image {
+        width: 100px;
+    }
 }
