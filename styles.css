@@ -121,6 +121,7 @@ button:hover {
     width: 90%; /* Ajusta el ancho del contenedor */
     max-width: 600px; /* Establece un ancho máximo */
     background-image: none; /* Quita cualquier imagen de fondo solo en este contenedor */
+    position: relative; /* Necesario para el posicionamiento de la imagen */
 }
 
 #custom-phrase {
@@ -129,4 +130,12 @@ button:hover {
     font-style: italic; /* Estilo de fuente en cursiva */
     padding: 5px;
     border-radius: 5px; /* Bordes ligeramente redondeados */
+}
+
+#right-image {
+    width: 120px; /* Aumenta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    position: absolute; /* Posiciona la imagen respecto al contenedor */
+    bottom: 0px; /* Aumenta el espacio desde la parte inferior del contenedor */
+    right: 10px; /* Espacio desde el lado derecho del contenedor */
 }
